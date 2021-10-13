@@ -68,5 +68,10 @@ public class Carrito {
         this.productos = productos;
     }
     
-    
+    public void agregarProductoCarrito(Producto prod){
+        productos.add(prod);
+    }
+    public void eliminarProductoCarrito(Producto prod){
+        productos.remove(prod);
+    }
 }

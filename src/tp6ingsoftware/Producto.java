@@ -8,18 +8,20 @@ package tp6ingsoftware;
  *
  * @author Usuario
  */
-public class Producto extends TipoProducto {
+public class Producto {
     private long codigo;
     private Carrito carritoAsociado;
+    private String nombreProducto;
+    private String descripcionProducto;
+    private int stockDisponible;
+    
+    public Producto(){}
 
-    public Producto(long codigo, Carrito carritoAsociado, String nombreProducto, String descripcionProducto, int stockDisponible) {
-        super(nombreProducto, descripcionProducto, stockDisponible);
+    public Producto(long codigo, String nombreProducto, String descripcionProducto, int stockDisponible) {
+        this.nombreProducto= nombreProducto;
+        this.descripcionProducto= descripcionProducto;
+        this.stockDisponible = stockDisponible;
         this.codigo = codigo;
-        this.carritoAsociado = carritoAsociado;
-    }
-
-    public Producto(String nombreProducto, String descripcionProducto, int stockDisponible) {
-        super(nombreProducto, descripcionProducto, stockDisponible);
     }
 
     public long getCodigo() {
@@ -37,10 +39,30 @@ public class Producto extends TipoProducto {
     public void setCarritoAsociado(Carrito carritoAsociado) {
         this.carritoAsociado = carritoAsociado;
     }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public String getDescripcionProducto() {
+        return descripcionProducto;
+    }
+
+    public int getStockDisponible() {
+        return stockDisponible;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public void setDescripcionProducto(String descripcionProducto) {
+        this.descripcionProducto = descripcionProducto;
+    }
+
+    public void setStockDisponible(int stockDisponible) {
+        this.stockDisponible = stockDisponible;
+    }
     
-    
-    
-    
-    
-    
+  
 }
