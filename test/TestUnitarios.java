@@ -10,12 +10,35 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import tp6ingsoftware.Producto;
+import tp6ingsoftware.Carrito;
+
 
 /**
  *
  * @author Usuario
  */
 public class TestUnitarios {
+    @Test
+    public void validarCantidadSeleccionada(){
+        Producto prod = new Producto();
+        prod.setStockDisponible(200);
+        Carrito carr = new Carrito();
+        int aux = carr.corroborarStock(prod,0 );
+        assertFalse(aux >= 0); 
+    }
+    @Test
+    public void validarCantidadStock(){
+        Producto prod = new Producto();
+        prod.setStockDisponible(50);
+        Carrito carr = new Carrito();
+        int aux = carr.corroborarStock(prod, 56);
+        assertFalse(aux >= 0); 
+    }
+       
+
+    
+    
     
     public TestUnitarios() {
     }

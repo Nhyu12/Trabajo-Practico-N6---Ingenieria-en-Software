@@ -68,5 +68,23 @@ public class Carrito {
         this.productos = productos;
     }
     
+    public void agregarProductoCarrito(Producto prod){
+        productos.add(prod);
+    }
+    public void eliminarProductoCarrito(Producto prod){
+        productos.remove(prod);
+    }
     
-}
+    public int corroborarStock (Producto prod, int cantidad){
+        
+        if(cantidad<=0 || cantidad > prod.getStockDisponible()){
+                return -1;
+            
+        } else { 
+            return prod.getStockDisponible()- cantidad;
+        }      
+             
+                   
+        }    
+    }
+
