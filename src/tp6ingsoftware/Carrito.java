@@ -106,4 +106,11 @@ public class Carrito {
         Double sumaTotal = total+this.envioSeleccionado.getTotalEnvio();
         return sumaTotal;
     }
+    
+    public void agregarProductoCarrito(Producto prod){
+        productos.add(prod);
+    }
+    public void eliminarProductoCarrito(Producto prod){
+        productos.remove(prod);
+    }
 }
