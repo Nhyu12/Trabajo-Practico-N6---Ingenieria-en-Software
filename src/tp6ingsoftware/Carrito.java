@@ -17,6 +17,7 @@ public class Carrito {
     private int totalCompra;
     private Cliente clienteAsociado;
     private ArrayList<Producto>productos=new ArrayList<>();
+    private Envio envioSeleccionado;
 
     public Carrito() {
     }
@@ -67,6 +68,44 @@ public class Carrito {
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
     }
+
+    public Envio getEnvioSeleccionado() {
+        return envioSeleccionado;
+    }
+
+    public void setEnvioSeleccionado(Envio envioSeleccionado) {
+        this.envioSeleccionado = envioSeleccionado;
+    }
+    
+    
+    
+    public void seleccionarMetodoDeEnvio(char tipo,String provincia){
+        this.envioSeleccionado=new Envio(tipo);
+        this.envioSeleccionado.RellenarCampos(provincia);
+    }
+    
+    public void añadirProducto(Producto p){
+        this.productos.add(p);
+        System.out.println("Se ha añadido el producto correctamente");
+    }
+    public Double subTotal(){
+        Double suma=0.0;
+        for(Producto prod:this.productos){
+            suma=suma+prod.getPrecioProducto();
+        }
+        return suma;
+    }
+    public Double sumaTotal(){
+        Double subtot=subTotal();
+        Double total=subtot*1.65;
+        return total;
+    }
+    
+    public Double totalCarrito(){
+        Double total = sumaTotal();
+        Double sumaTotal = total+this.envioSeleccionado.getTotalEnvio();
+        return sumaTotal;
+    }
     
     public void agregarProductoCarrito(Producto prod){
         productos.add(prod);
@@ -74,17 +113,12 @@ public class Carrito {
     public void eliminarProductoCarrito(Producto prod){
         productos.remove(prod);
     }
-    
     public int corroborarStock (Producto prod, int cantidad){
-        
         if(cantidad<=0 || cantidad > prod.getStockDisponible()){
                 return -1;
-            
+
         } else { 
             return prod.getStockDisponible()- cantidad;
-        }      
-             
-                   
-        }    
+        }
     }
-
+}
