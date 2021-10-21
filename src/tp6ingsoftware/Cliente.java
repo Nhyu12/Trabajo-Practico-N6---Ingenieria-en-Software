@@ -20,7 +20,7 @@ public class Cliente {
     private MercadoPago mercadoPagoAsociado;
     private Domicilio domicilioCliente;
 
-    public Cliente(){
+    public Cliente() {
     }
 
     public Cliente(String nombreCliente, long numeroCliente, String email, Carrito carritoAsociado, MercadoPago mercadoPagoAsociado, Domicilio domicilioCliente) {
@@ -88,13 +88,5 @@ public class Cliente {
         this.domicilioCliente = domicilioCliente;
     }
     
-    public Carrito eliminarProductoCarrito(Producto prod) {
-	this.carritoAsociado.getProductos().remove(prod);
-        System.out.println(this.carritoAsociado.toString());
-	if (this.carritoAsociado.getProductos().isEmpty()) {
-		return null;
-	}
-        System.out.println(this.carritoAsociado.toString());
-        return this.carritoAsociado;
-    } 
+    
 }

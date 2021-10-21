@@ -15,11 +15,7 @@ public class TP6INGSOFTWARE {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Producto prod = new Producto();
-        Cliente cli = new Cliente();
-        Carrito carr= new Carrito();
-        carr.agregarProductoCarrito(prod);
-        cli.setCarritoAsociado(carr);
-        cli.eliminarProductoCarrito(prod);
-    }  
+        // TODO code application logic here
+    }
+    
 }
