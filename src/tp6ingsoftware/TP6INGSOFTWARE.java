@@ -16,8 +16,6 @@ public class TP6INGSOFTWARE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-      
-        
     }
     
 }
