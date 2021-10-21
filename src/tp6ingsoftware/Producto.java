@@ -9,47 +9,22 @@ package tp6ingsoftware;
  * @author Usuario
  */
 public class Producto {
-    private long codigo;
-    private Carrito carritoAsociado;
     private String nombreProducto;
     private String descripcionProducto;
     private int stockDisponible;
+    private Double precioProducto;
+    private long codigo;
+    private Carrito carritoAsociado;
 
-    public Producto(long codigo, Carrito carritoAsociado, String nombreProducto, String descripcionProducto, int stockDisponible) {
-       
-        this.codigo = codigo;
-        this.carritoAsociado = carritoAsociado;
+    public Producto(long codigo, String nombreProducto, String descripcionProducto, int stockDisponible, Double precioProducto) {
         this.nombreProducto = nombreProducto;
         this.descripcionProducto = descripcionProducto;
         this.stockDisponible = stockDisponible;
-    }
-
-    public Producto() {
-       
-    }
-
-    public long getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(long codigo) {
+        this.precioProducto= precioProducto;
         this.codigo = codigo;
     }
 
-    public Carrito getCarritoAsociado() {
-        return carritoAsociado;
-    }
-
-    public void setCarritoAsociado(Carrito carritoAsociado) {
-        this.carritoAsociado = carritoAsociado;
-    }
-
-    public String getNombreProducto() {
-        return nombreProducto;
-    }
-
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public Producto() {
     }
 
     public String getDescripcionProducto() {
@@ -67,10 +42,37 @@ public class Producto {
     public void setStockDisponible(int stockDisponible) {
         this.stockDisponible = stockDisponible;
     }
-    
-    
-    
-    
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public Double getPrecioProducto() {
+        return precioProducto;
+    }
+
+    public void setPrecioProducto(Double precioProducto) {
+        this.precioProducto = precioProducto;
+    }
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
+
+    public Carrito getCarritoAsociado() {
+        return carritoAsociado;
+    }
+
+    public void setCarritoAsociado(Carrito carritoAsociado) {
+        this.carritoAsociado = carritoAsociado;
+    }
     
     
 }
